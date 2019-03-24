@@ -11,7 +11,9 @@ namespace ProiectPDM_Exchange
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            var mainPage = new MainPage();
+            var navigationPage = new NavigationPage(mainPage);
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()

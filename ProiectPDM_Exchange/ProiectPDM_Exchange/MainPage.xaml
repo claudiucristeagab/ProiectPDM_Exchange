@@ -4,11 +4,22 @@
              xmlns:local="clr-namespace:ProiectPDM_Exchange"
              x:Class="ProiectPDM_Exchange.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Vertical">
+        <Label Text="{Binding Base, StringFormat='Rata de schimb pentru {0}'}" HorizontalOptions="Center"/>
+        <Label Text="{Binding Date}" HorizontalOptions="Center"/>
+        <Button Text="Alta moneda" Clicked="Button_Clicked"/>
+        <ListView x:Name="ExchangeRate_ListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Margin="4">
+                            <Label Text="{Binding Key, StringFormat='Moneda: {0}'}"/>
+                            <Label Text="{Binding Value, StringFormat='Valoarea: {0}'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
