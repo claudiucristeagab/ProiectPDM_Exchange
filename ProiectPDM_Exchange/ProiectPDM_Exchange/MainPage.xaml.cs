@@ -18,6 +18,7 @@ namespace ProiectPDM_Exchange
         public MainPage()
         {
             InitializeComponent();
+            currentCurrency = new Currency();
         }
 
         protected async override void OnAppearing()
@@ -26,7 +27,7 @@ namespace ProiectPDM_Exchange
 
             var currencyName = string.Empty;
 
-            if (currentCurrency == null)
+            if (string.IsNullOrEmpty(currentCurrency.Name))
             {
                 currencyName = ApiStrings.DefaultCurrency;
             }
