@@ -20,7 +20,17 @@ namespace ProiectPDM_Exchange.Services
 
         public async Task<ExchangeRate> GetTodayRates(string currencyName)
         {
-            var json = await httpClient.GetStringAsync(ApiStrings.Latest + currencyName);
+            var address = ApiStrings.Latest + currencyName;
+            var json = await httpClient.GetStringAsync(address);
+            var exchangeRate = JsonConvert.DeserializeObject<ExchangeRate>(json);
+
+            return exchangeRate;
+        }
+
+        public async Task<ExchangeRate> GetRatesForDate(string currencyName, DateTime dateTime)
+        {
+            var address = ApiStrings.Base + dateTime.ToString("yyyy-MM-dd") + "?base=" + currencyName;
+            var json = await httpClient.GetStringAsync(address);
             var exchangeRate = JsonConvert.DeserializeObject<ExchangeRate>(json);
 
             return exchangeRate;

@@ -14,12 +14,13 @@
                     <ViewCell>
                         <StackLayout Orientation="Vertical" Margin="4">
                             <Label Text="{Binding Name, StringFormat='Moneda: {0}'}"/>
-                            <Label Text="{Binding Value, StringFormat='Valoarea: {0:0.00}'}"/>
+                            <Label Text="{Binding Value, StringFormat='Valoarea: {0:0.000}'}"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <DatePicker x:Name="Main_DatePicker" DateSelected="Main_DatePicker_DateSelected"/>
         <Button x:Name="Main_About_Button" Text="Despre" Clicked="Main_About_Button_Clicked"/>
     </StackLayout>
 
