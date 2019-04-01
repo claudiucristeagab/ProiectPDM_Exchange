@@ -4,21 +4,28 @@
              x:Class="ProiectPDM_Exchange.FavoritesPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <Picker x:Name="Favorites_SelectFavorite_Picker" 
+                    Title="Adaugati o moneda noua."/>
+            <Button x:Name="Favorites_AddFavorite_Button" 
+                    Clicked="Favorites_AddFavorite_Button_Clicked" 
+                    Text="Adauga"/>
             <Label Text="Selectati o noua moneda din cele salvate"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            
-            <ListView x:Name="Currencies_ListView">
+            <ListView x:Name="Currencies_ListView" ItemSelected="Currencies_ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical" Margin="4">
-                                <Label Text="{Binding Name}" FontSize="Large"/>
+                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="Favorites_DeleteAllFavorites_Button"
+                    Clicked="Favorites_DeleteAllFavorites_Button_Clicked"
+                    Text="Sterge toate favoritele"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

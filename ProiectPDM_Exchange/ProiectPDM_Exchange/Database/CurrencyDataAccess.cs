@@ -41,6 +41,11 @@ namespace ProiectPDM_Exchange.Database
         {
             db.Delete<Currency>(id);
         }
+
+        public void DeleteAllCurrencies()
+        {
+            db.DeleteAll<Currency>();
+        }
         #endregion
 
         #region Create Table
