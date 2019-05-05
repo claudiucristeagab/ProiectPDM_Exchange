@@ -7,8 +7,8 @@
     <StackLayout Orientation="Vertical">
         <Label Text="{Binding Base, StringFormat='Rata de schimb pentru {0}'}" HorizontalOptions="Center"/>
         <Label Text="{Binding Date}" HorizontalOptions="Center"/>
-        <Button Text="Alta moneda" Clicked="Button_Clicked"/>
-        <ListView x:Name="ExchangeRate_ListView">
+        <Button Text="Favorite" Clicked="Button_Clicked"/>
+        <ListView x:Name="ExchangeRate_ListView" ItemSelected="ExchangeRate_ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -21,7 +21,6 @@
             </ListView.ItemTemplate>
         </ListView>
         <DatePicker x:Name="Main_DatePicker" DateSelected="Main_DatePicker_DateSelected"/>
-        <Button x:Name="Main_About_Button" Text="Despre" Clicked="Main_About_Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProiectPDM_Exchange.MenuPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Curs valutar" x:Name="Menu_ExchangeRate_Button" Clicked="Menu_ExchangeRate_Button_Clicked"/>
+            <Button Text="Favorite" x:Name="Menu_Favorites_Button" Clicked="Menu_Favorites_Button_Clicked"/>
+            <Button x:Name="Menu_About_Button" Text="Despre" Clicked="Menu_About_Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

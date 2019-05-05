@@ -74,8 +74,10 @@ namespace ProiectPDM_Exchange
             var listView = (ListView)sender;
             var selectedCurrency = (Currency)listView.SelectedItem;
 
-            MessagingCenter.Send<string, Currency>("MainPage", "FavoriteCurrencySelected", selectedCurrency);
-            await Navigation.PopAsync();
+            var mainPage = new MainPage();
+            await Navigation.PushAsync(mainPage);
+
+            MessagingCenter.Send<string, Currency>("MainPage", "FavoriteCurrencySelected", selectedCurrency);  
         }
     }
 }

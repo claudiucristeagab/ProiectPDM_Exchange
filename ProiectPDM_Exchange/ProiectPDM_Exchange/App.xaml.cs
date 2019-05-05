@@ -11,8 +11,8 @@ namespace ProiectPDM_Exchange
         {
             InitializeComponent();
 
-            var mainPage = new MainPage();
-            var navigationPage = new NavigationPage(mainPage);
+            var menuPage = new MenuPage();
+            var navigationPage = new NavigationPage(menuPage);
             MainPage = navigationPage;
         }
 

@@ -73,12 +73,6 @@ namespace ProiectPDM_Exchange
             ExchangeRate_ListView.ItemsSource = exchangeRate.Rates;
         }
 
-        private void Main_About_Button_Clicked(object sender, EventArgs e)
-        {
-            var aboutPage = new AboutPage();
-            Navigation.PushAsync(aboutPage);
-        }
-
         private async void Main_DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             var datePicker = (DatePicker)sender;
@@ -98,6 +92,20 @@ namespace ProiectPDM_Exchange
         {
             var favoritesPage = new FavoritesPage();
             Navigation.PushAsync(favoritesPage);
+        }
+
+        private async void ExchangeRate_ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var listView = (ListView)sender;
+            var rate = (Rate)listView.SelectedItem;
+
+            var name = rate.Name;
+            var dateTime = (Main_DatePicker.Date>DateTime.Now) ? DateTime.Now : Main_DatePicker.Date;
+
+            var exchangeRate = await exchangeRateService.GetRatesForDate(name, dateTime);
+
+            BindingContext = exchangeRate;
+            ExchangeRate_ListView.ItemsSource = exchangeRate.Rates;
         }
     }
 }
