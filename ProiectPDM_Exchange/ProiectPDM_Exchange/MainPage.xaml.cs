@@ -82,7 +82,16 @@ namespace ProiectPDM_Exchange
         private async void Main_DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             var datePicker = (DatePicker)sender;
-            await GetRateForDate(datePicker.Date);
+
+            if (datePicker.Date > DateTime.Now)
+            {
+                await GetRateForDate(DateTime.Now);
+            }
+            else
+            {
+                await GetRateForDate(datePicker.Date);
+            }
+            
         }
 
         private void Button_Clicked(object sender, EventArgs e)
