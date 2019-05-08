@@ -12,12 +12,14 @@ namespace ProiectPDM_Exchange
         private Currency currentCurrency;
 
         private readonly ExchangeRateService exchangeRateService;
+        private readonly ImageService imageService;
 
         public MainPage()
         {
             InitializeComponent();
             currentCurrency = new Currency();
             exchangeRateService = new ExchangeRateService();
+            imageService = new ImageService();
 
             MessagingCenter.Subscribe<string, Currency>("MainPage", "FavoriteCurrencySelected", async (sender, arg) => {
                 currentCurrency = arg;
@@ -47,6 +49,12 @@ namespace ProiectPDM_Exchange
             }
 
             var exchangeRate = await exchangeRateService.GetTodayRates(currencyName);
+
+            foreach(var rate in exchangeRate.Rates)
+            {
+                rate.ImageUri = imageService.GetImageUri(rate.Name);
+            }
+
             BindingContext = exchangeRate;
             ExchangeRate_ListView.ItemsSource = exchangeRate.Rates;
         }
@@ -64,6 +72,12 @@ namespace ProiectPDM_Exchange
                 currencyName = currentCurrency.Name;
             }
             var exchangeRate = await exchangeRateService.GetRatesForDate(currencyName, dateTime);
+
+            foreach (var rate in exchangeRate.Rates)
+            {
+                rate.ImageUri = imageService.GetImageUri(rate.Name);
+            }
+
             BindingContext = exchangeRate;
             ExchangeRate_ListView.ItemsSource = exchangeRate.Rates;
         }
