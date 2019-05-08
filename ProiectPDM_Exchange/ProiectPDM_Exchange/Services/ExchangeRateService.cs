@@ -2,9 +2,7 @@
 using ProiectPDM_Exchange.Constants;
 using ProiectPDM_Exchange.Entities;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProiectPDM_Exchange.Services

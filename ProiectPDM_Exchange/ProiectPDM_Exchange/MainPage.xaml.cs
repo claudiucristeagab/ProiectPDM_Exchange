@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json;
-using ProiectPDM_Exchange.Constants;
+﻿using ProiectPDM_Exchange.Constants;
 using ProiectPDM_Exchange.Entities;
 using ProiectPDM_Exchange.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

@@ -12,9 +12,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical" Margin="4">
-                            <Label Text="{Binding Name, StringFormat='Moneda: {0}'}"/>
-                            <Label Text="{Binding Value, StringFormat='Valoarea: {0:0.000}'}"/>
+                        <StackLayout Orientation="Horizontal" Margin="4">
+                            <Image x:Name="Prognoza_Image" Source="{Binding Weather[0].IconUri}" HorizontalOptions="Fill"/>
+                            <StackLayout Orientation="Vertical" Margin="4">
+                                <Label Text="{Binding Name, StringFormat='Moneda: {0}'}"/>
+                                <Label Text="{Binding Value, StringFormat='Curs: {0:0.000}'}"/>
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
