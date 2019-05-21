@@ -109,12 +109,10 @@ namespace ProiectPDM_Exchange
             var rate = (Rate)listView.SelectedItem;
 
             var name = rate.Name;
+            currentCurrency.Name = name;
             var dateTime = (Main_DatePicker.Date>DateTime.Now) ? DateTime.Now : Main_DatePicker.Date;
 
-            var exchangeRate = await exchangeRateService.GetRatesForDate(name, dateTime);
-
-            BindingContext = exchangeRate;
-            ExchangeRate_ListView.ItemsSource = exchangeRate.Rates;
+            await GetRateForDate(dateTime);
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProiectPDM_Exchange.AboutPage">
+             x:Class="ProiectPDM_Exchange.AboutPage"
+             Padding="20">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#9bd4f5">
             <Label Text="Aplicatie creata de:"
                 HorizontalOptions="CenterAndExpand" />
             <Label Text="Cristea Claudiu-Gabriel"
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="Constantina Alina Loredana"
+            <Label Text="Constantina Alina-Loredana"
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="Draghiciu Dragos"
+            <Label Text="Draghiciu Dragos-Ioan"
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

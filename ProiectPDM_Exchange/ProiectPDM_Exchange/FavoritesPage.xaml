@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProiectPDM_Exchange.FavoritesPage">
+             x:Class="ProiectPDM_Exchange.FavoritesPage"
+             Padding="20">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" BackgroundColor="#9bd4f5">
             <Picker x:Name="Favorites_SelectFavorite_Picker" 
                     Title="Adaugati o moneda noua."/>
             <Button x:Name="Favorites_AddFavorite_Button" 
